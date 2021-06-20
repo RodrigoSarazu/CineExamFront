@@ -57,7 +57,7 @@ public class LoginActivity extends AppCompatActivity {
                         try{
                             if(response.getInt("id_usuario")>0){
                                 //Acá deben cambiar el MainActivity por el menú que van a crear
-                                startActivity(new Intent(LoginActivity.this, MainActivity.class));
+                                startActivity(new Intent(LoginActivity.this, MenuActivity.class));
                             }else{
                                 mostrarMensajeError(response.getString("mensaje"));
                             }

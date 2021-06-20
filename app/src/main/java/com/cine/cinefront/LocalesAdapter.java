@@ -37,7 +37,7 @@ public class LocalesAdapter extends RecyclerView.Adapter<LocalesAdapter.ViewHold
     public void onBindViewHolder(@NonNull LocalesAdapter.ViewHolder holder, int position) {
         final Locales objLocales=dataLocales.get(position);
         holder.recyclerBinding.tvlocal.setText(objLocales.getNomloc());
-        Glide.with(context).load(new Constante().URL_IMAGENLOC_API+objLocales.getId()).into(holder.recyclerBinding.ivLocal);
+        Glide.with(context).load( Constante.URL_IMAGENLOC_API +objLocales.getId()).into(holder.recyclerBinding.ivLocal);
     }
 
 
