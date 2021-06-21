@@ -14,6 +14,7 @@ import com.android.volley.VolleyError;
 import com.android.volley.toolbox.JsonObjectRequest;
 import com.android.volley.toolbox.Volley;
 import com.cine.cinefront.common.Constante;
+import com.cine.cinefront.common.SharedPreferencesManager;
 import com.cine.cinefront.databinding.ActivityLoginBinding;
 
 import org.json.JSONException;
@@ -39,6 +40,13 @@ public class LoginActivity extends AppCompatActivity {
                 login();
             }
         });
+        validarDatos();
+    }
+
+    private void validarDatos() {
+        if (!SharedPreferencesManager.getSomeStringValue(Constante.PREF_NOMBRES).equals("")) {
+            startActivity(new Intent(LoginActivity.this, MenuActivity.class));
+        }
     }
 
     private void login() {
@@ -47,6 +55,7 @@ public class LoginActivity extends AppCompatActivity {
         parametros.put("email", binding.etEmail.getText().toString());
         parametros.put("password", binding.etPassword.getText().toString());
         JSONObject jsonObjectParametro = new JSONObject(parametros);
+
         JsonObjectRequest request = new JsonObjectRequest(
                 Request.Method.POST,
                 Constante.URL_LOGIN_API,
@@ -54,14 +63,23 @@ public class LoginActivity extends AppCompatActivity {
                 new Response.Listener<JSONObject>() {
                     @Override
                     public void onResponse(JSONObject response) {
-                        try{
-                            if(response.getInt("id_usuario")>0){
-                                //Acá deben cambiar el MainActivity por el menú que van a crear
+                        try {
+                            if (response.getInt("id_usuario") > 0) {
+
+                                SharedPreferencesManager.setSomeStringValue(
+                                        Constante.PREF_NOMBRES,
+                                        response.getString("nombres")
+                                );
+                                SharedPreferencesManager.setSomeStringValue(
+                                        Constante.PREF_APELLIDOS,
+                                        response.getString("apellidos")
+                                );
+
                                 startActivity(new Intent(LoginActivity.this, MenuActivity.class));
-                            }else{
+                            } else {
                                 mostrarMensajeError(response.getString("mensaje"));
                             }
-                        }catch (JSONException ex) {
+                        } catch (JSONException ex) {
                             mostrarMensajeError("Error en el servidor, inténtelo de nuevo.");
                         }
                     }

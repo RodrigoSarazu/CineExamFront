@@ -7,6 +7,19 @@
     tools:context=".MenuActivity">
 
     <TextView
+        android:id="@+id/tvBienvenida"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="TextView"
+        android:textColor="@color/black"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toTopOf="@+id/btnPeliculas"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tvMenu" />
+
+    <TextView
         android:id="@+id/tvMenu"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
