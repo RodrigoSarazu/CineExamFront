@@ -18,13 +18,18 @@ import com.cine.cinefront.databinding.ActivityMenuBinding;
 public class MenuActivity extends AppCompatActivity {
     private Button btnPeliculas;
     private Button btnLocales;
+    private Button btnMetodoPago;
     private Button btnSalir;
+<<<<<<< HEAD
     private TextView txtNombre;
+=======
+>>>>>>> 0c9905b7a122966e632b8452b282552da583099c
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_menu);
+<<<<<<< HEAD
 
         btnLocales = findViewById(R.id.btnLocales);
         btnPeliculas = findViewById(R.id.btnPeliculas);
@@ -37,9 +42,22 @@ public class MenuActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 startActivity(new Intent(MenuActivity.this, MainActivity.class));
+=======
+
+        btnLocales = findViewById (R.id.btnLocales);
+        btnPeliculas = findViewById (R.id.btnPeliculas);
+        btnMetodoPago = findViewById (R.id.btnMetodoPago);
+        btnSalir = findViewById (R.id.btnSalir);
+
+        btnLocales.setOnClickListener ( new View.OnClickListener () {
+            @Override
+            public void onClick(View v) {
+                startActivity( new Intent ( MenuActivity.this, MainActivity.class ) );
+>>>>>>> 0c9905b7a122966e632b8452b282552da583099c
             }
         });
 
+<<<<<<< HEAD
 
         btnPeliculas.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -48,10 +66,26 @@ public class MenuActivity extends AppCompatActivity {
             }
         });
 
+=======
+        btnPeliculas.setOnClickListener ( new View.OnClickListener () {
+            @Override
+            public void onClick(View v) {
+                startActivity( new Intent (MenuActivity.this,PeliculasActivity.class) );
+            }
+        } );
+
+        btnMetodoPago.setOnClickListener ( new View.OnClickListener () {
+            @Override
+            public void onClick(View v) {
+                startActivity( new Intent (MenuActivity.this,MetodoPagoActivity.class) );
+            }
+        } );
+>>>>>>> 0c9905b7a122966e632b8452b282552da583099c
 
         btnSalir.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+<<<<<<< HEAD
                 mostrarDialogCerrarSesion();
             }
         });
@@ -74,6 +108,13 @@ public class MenuActivity extends AppCompatActivity {
                 dialog.dismiss();
             }
         }).show();
+=======
+                startActivity( new Intent (MenuActivity.this,LoginActivity.class) );
+                Toast.makeText(MenuActivity.this,"Finalizó sesión",Toast.LENGTH_SHORT).show();
+            }
+        } );
+
+>>>>>>> 0c9905b7a122966e632b8452b282552da583099c
     }
 }
 

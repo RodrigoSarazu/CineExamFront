@@ -33,7 +33,7 @@ public class MainActivity extends AppCompatActivity {
         binding.rvlocales.setLayoutManager(
                 new GridLayoutManager(MainActivity.this,3));
         binding.rvlocales.setAdapter(adapter);
-        obtenerLocales( Constante.URL_LIST_API );
+        obtenerLocales(new Constante().URL_LIST_API);
     }
     private void obtenerLocales(String url){
         RequestQueue cola= Volley.newRequestQueue(this);
