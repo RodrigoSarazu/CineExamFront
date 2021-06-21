@@ -11,46 +11,47 @@ import android.widget.Toast;
 public class MenuActivity extends AppCompatActivity {
     private Button btnPeliculas;
     private Button btnLocales;
+    private Button btnMetodoPago;
     private Button btnSalir;
-
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate ( savedInstanceState );
-        setContentView ( R.layout.activity_menu );
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_menu);
 
-        btnLocales=findViewById ( R.id.btnLocales );
-        btnPeliculas=findViewById ( R.id.btnPeliculas );
-        btnSalir=findViewById ( R.id.btnSalir );
-
-
+        btnLocales = findViewById (R.id.btnLocales);
+        btnPeliculas = findViewById (R.id.btnPeliculas);
+        btnMetodoPago = findViewById (R.id.btnMetodoPago);
+        btnSalir = findViewById (R.id.btnSalir);
 
         btnLocales.setOnClickListener ( new View.OnClickListener () {
             @Override
             public void onClick(View v) {
-                startActivity ( new Intent ( MenuActivity.this, MainActivity.class ) );
+                startActivity( new Intent ( MenuActivity.this, MainActivity.class ) );
             }
         } );
-
 
         btnPeliculas.setOnClickListener ( new View.OnClickListener () {
             @Override
             public void onClick(View v) {
-                startActivity ( new Intent (MenuActivity.this,PeliculasActivity.class) );
+                startActivity( new Intent (MenuActivity.this,PeliculasActivity.class) );
             }
         } );
 
-
+        btnMetodoPago.setOnClickListener ( new View.OnClickListener () {
+            @Override
+            public void onClick(View v) {
+                startActivity( new Intent (MenuActivity.this,MetodoPagoActivity.class) );
+            }
+        } );
 
         btnSalir.setOnClickListener ( new View.OnClickListener () {
             @Override
             public void onClick(View v) {
-                startActivity ( new Intent (MenuActivity.this,LoginActivity.class) );
+                startActivity( new Intent (MenuActivity.this,LoginActivity.class) );
                 Toast.makeText(MenuActivity.this,"Finalizó sesión",Toast.LENGTH_SHORT).show();
             }
         } );
-
-
 
     }
 }

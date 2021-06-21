@@ -14,7 +14,6 @@ import com.cine.cinefront.databinding.ItemCardviewBinding;
 import com.cine.cinefront.databinding.ItemCardviewPeliculasBinding;
 import com.cine.cinefront.model.Peliculas;
 
-
 import java.util.ArrayList;
 
 public class PeliculasAdapter extends RecyclerView.Adapter<PeliculasAdapter.ViewHolder>{
@@ -26,13 +25,12 @@ public class PeliculasAdapter extends RecyclerView.Adapter<PeliculasAdapter.View
          dataPeliculas=new ArrayList<> ();
      }
 
-
     @NonNull
     @Override
-    public PeliculasAdapter.ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
+    public ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
         LayoutInflater layoutInflater=LayoutInflater.from(parent.getContext());
         ItemCardviewPeliculasBinding recyclerBinding= ItemCardviewPeliculasBinding.inflate(layoutInflater,parent,false);
-        return new PeliculasAdapter.ViewHolder (recyclerBinding);
+        return new ViewHolder (recyclerBinding);
     }
 
     @Override
@@ -40,7 +38,7 @@ public class PeliculasAdapter extends RecyclerView.Adapter<PeliculasAdapter.View
          final Peliculas objPeliculas=dataPeliculas.get(position);
          holder.recyclerBinding.tvpelicula.setText(objPeliculas.getNompeli ());
          holder.recyclerBinding.tvpeliculainfo.setText(objPeliculas.getInfopeli ());
-         Glide.with ( context).load ( Constante.URL_IMAGENLOC_APIPELI +objPeliculas.getIdpeli ()).into ( holder.recyclerBinding.ivpelicula );
+         Glide.with (context).load ( Constante.URL_IMAGENLOC_APIPELI +objPeliculas.getIdpeli ()).into ( holder.recyclerBinding.ivpelicula );
 
     }
 
@@ -56,7 +54,7 @@ public class PeliculasAdapter extends RecyclerView.Adapter<PeliculasAdapter.View
 
         public class ViewHolder extends RecyclerView.ViewHolder {
             ItemCardviewPeliculasBinding recyclerBinding;
-            public ViewHolder(@NonNull   ItemCardviewPeliculasBinding itemView) {
+            public ViewHolder(@NonNull ItemCardviewPeliculasBinding itemView) {
                 super(itemView.getRoot());
                 recyclerBinding=itemView;
             }

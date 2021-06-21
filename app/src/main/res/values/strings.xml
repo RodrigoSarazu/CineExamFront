@@ -3,9 +3,10 @@
     <string name="txtBtnLogin">Ingresar</string>
     <string name="txtHintEmail">Ingrese su correo electrónico:</string>
     <string name="txtHintPassword">Ingrese su contraseña:</string>
+    <string name="descImageLogo">Cineplanet</string>
     <string name="tvmenu">MENU PRINCIPAL</string>
     <string name="btnPeliculas">PELICULAS EN CARTELERA</string>
     <string name="btnLocales">LOCALES DISPONIBLES</string>
     <string name="btnSalir">CERRAR APLICACION</string>
-
+    <string name="btnMetodoPago">COMPRAR BOLETO</string>
 </resources>
