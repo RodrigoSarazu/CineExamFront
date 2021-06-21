@@ -7,12 +7,7 @@
     <string name="tvmenu">MENU PRINCIPAL</string>
     <string name="btnPeliculas">PELICULAS EN CARTELERA</string>
     <string name="btnLocales">LOCALES DISPONIBLES</string>
-<<<<<<< HEAD
-    <string name="btnSalir">CERRAR SESIÓN</string>
-    <string name="cancel">Cancelar</string>
-
-=======
     <string name="btnSalir">CERRAR APLICACION</string>
     <string name="btnMetodoPago">COMPRAR BOLETO</string>
->>>>>>> 0c9905b7a122966e632b8452b282552da583099c
+    <string name="cancel">Cancelar</string>
 </resources>

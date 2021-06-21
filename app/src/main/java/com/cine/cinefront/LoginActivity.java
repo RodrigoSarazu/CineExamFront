@@ -63,7 +63,6 @@ public class LoginActivity extends AppCompatActivity {
                 new Response.Listener<JSONObject>() {
                     @Override
                     public void onResponse(JSONObject response) {
-<<<<<<< HEAD
                         try {
                             if (response.getInt("id_usuario") > 0) {
 
@@ -75,16 +74,8 @@ public class LoginActivity extends AppCompatActivity {
                                         Constante.PREF_APELLIDOS,
                                         response.getString("apellidos")
                                 );
-
                                 startActivity(new Intent(LoginActivity.this, MenuActivity.class));
                             } else {
-=======
-                        try{
-                            if(response.getInt("id_usuario")>0){
-                                //Acá deben cambiar el MainActivity por el menú que van a crear
-                                startActivity(new Intent(LoginActivity.this, MainActivity.class));
-                            }else{
->>>>>>> 0c9905b7a122966e632b8452b282552da583099c
                                 mostrarMensajeError(response.getString("mensaje"));
                             }
                         } catch (JSONException ex) {
