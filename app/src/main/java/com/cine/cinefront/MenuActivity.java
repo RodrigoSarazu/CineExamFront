@@ -75,7 +75,7 @@ public class MenuActivity extends AppCompatActivity {
                     public void onClick(DialogInterface dialog, int which) {
                         SharedPreferencesManager.setSomeStringValue(Constante.PREF_NOMBRES, null);
                         SharedPreferencesManager.setSomeStringValue(Constante.PREF_APELLIDOS, null);
-                        System.exit(0);
+                        finishAffinity();
                     }
                 }).setNegativeButton(android.R.string.cancel, new DialogInterface.OnClickListener() {
             @Override
