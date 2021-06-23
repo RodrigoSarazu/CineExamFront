@@ -19,6 +19,7 @@ public class MenuActivity extends AppCompatActivity {
     private Button btnPeliculas;
     private Button btnLocales;
     private Button btnMetodoPago;
+    private Button btnComidas;
     private Button btnSalir;
     private TextView txtNombre;
 
@@ -32,6 +33,7 @@ public class MenuActivity extends AppCompatActivity {
         btnSalir = findViewById(R.id.btnSalir);
         txtNombre = findViewById(R.id.tvBienvenida);
         btnMetodoPago = findViewById(R.id.btnMetodoPago);
+        btnComidas=findViewById(R.id.btnComidas);
 
         txtNombre.setText("Bienvenido " + SharedPreferencesManager.getSomeStringValue(Constante.PREF_NOMBRES) + " "
                 + SharedPreferencesManager.getSomeStringValue(Constante.PREF_APELLIDOS) + "!");
@@ -57,12 +59,21 @@ public class MenuActivity extends AppCompatActivity {
             }
         });
 
+        btnComidas.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity( new Intent (MenuActivity.this,ComidasActivity.class) );
+            }
+        });
+
         btnSalir.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 mostrarDialogCerrarSesion();
             }
         });
+
+
     }
 
     //Implementar toast cerrar sesión y cerrar app

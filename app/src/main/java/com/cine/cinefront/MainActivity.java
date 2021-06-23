@@ -3,7 +3,9 @@ package com.cine.cinefront;
 import  androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.GridLayoutManager;
 
+import android.content.Intent;
 import android.os.Bundle;
+import android.view.View;
 
 import com.android.volley.Request;
 import com.android.volley.RequestQueue;
@@ -31,9 +33,17 @@ public class MainActivity extends AppCompatActivity {
         setContentView(binding.getRoot());
         adapter=new LocalesAdapter(this);
         binding.rvlocales.setLayoutManager(
-                new GridLayoutManager(MainActivity.this,3));
+                new GridLayoutManager(MainActivity.this,2));
         binding.rvlocales.setAdapter(adapter);
         obtenerLocales(new Constante().URL_LIST_API);
+
+        binding.btnRegresarLog.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(MainActivity.this,MenuActivity.class));
+            }
+        });
+
     }
     private void obtenerLocales(String url){
         RequestQueue cola= Volley.newRequestQueue(this);

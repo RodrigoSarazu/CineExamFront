@@ -1,6 +1,8 @@
 package com.cine.cinefront;
 
+import android.content.Intent;
 import android.os.Bundle;
+import android.view.View;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.GridLayoutManager;
@@ -35,6 +37,12 @@ public class MetodoPagoActivity extends AppCompatActivity {
         binding.rvmetodopago.setAdapter(adapter);
         obtenerMetodoPago(new Constante().URL_LIST_METPAG_API);
         obtenerDatosSharedPreferences();
+        binding.btnRegresar.setOnClickListener ( new View.OnClickListener () {
+            @Override
+            public void onClick(View v) {
+                startActivity ( new Intent(MetodoPagoActivity.this,MenuActivity.class) );
+            }
+        } );
     }
 
     private void obtenerDatosSharedPreferences() {
@@ -42,7 +50,6 @@ public class MetodoPagoActivity extends AppCompatActivity {
                 "SELECCIONE EL MÉTODO DE PAGO PARA PAGAR BOLETO"
         );
     }
-
     private void obtenerMetodoPago(String url){
         RequestQueue cola= Volley.newRequestQueue(this);
         JsonObjectRequest jsonObjectRequest=new JsonObjectRequest(
@@ -58,6 +65,8 @@ public class MetodoPagoActivity extends AppCompatActivity {
                                 jsonObject.getLong("idmetpago"),
                                 jsonObject.getString("tipopago"),
                                 jsonObject.getString("imgtipopago")
+
+
                         );
                         listaMetodoPago.add(nuevoMetodoPago);
                     }
@@ -75,4 +84,6 @@ public class MetodoPagoActivity extends AppCompatActivity {
         );
         cola.add(jsonObjectRequest);
     }
+
+
 }

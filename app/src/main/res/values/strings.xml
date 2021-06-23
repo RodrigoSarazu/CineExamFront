@@ -10,4 +10,11 @@
     <string name="btnSalir">CERRAR SESIÓN</string>
     <string name="btnMetodoPago">COMPRAR BOLETO</string>
     <string name="cancel">Cancelar</string>
+    <string name="btnComidas">Comidas</string>
+    <string name="CbVisa">Visa</string>
+    <string name="CbPayPal">PayPal</string>
+    <string name="CbMastercard">MasterCard</string>
+    <string name="CbAmericanExpress">American Express</string>
+    <string name="CbBCP">BCP</string>
+    <string name="CbScotiabank">Scotiabank</string>
 </resources>

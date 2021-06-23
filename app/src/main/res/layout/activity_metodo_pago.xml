@@ -10,36 +10,39 @@
         android:id="@+id/rvmetodopago"
         android:layout_width="0dp"
         android:layout_height="0dp"
-        android:layout_marginTop="210dp"
+        android:layout_marginTop="170dp"
+        android:foregroundGravity="center_vertical|center_horizontal"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.0" />
+        app:layout_constraintVertical_bias="1.0" />
 
     <ImageView
         android:id="@+id/ivLogoPrincipal2"
         android:layout_width="wrap_content"
-        android:layout_height="120sp"
-        android:layout_marginTop="20dp"
+        android:layout_height="80sp"
+        android:layout_marginTop="25dp"
         android:contentDescription="@string/descImageLogo"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/tvMetodoPago"
+        app:layout_constraintTop_toTopOf="parent"
         app:srcCompat="@drawable/logo" />
 
     <TextView
         android:id="@+id/tvMetodoPago"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="15dp"
+        android:layout_marginTop="16dp"
+        android:gravity="center_horizontal|center_vertical"
         android:text="TextView"
-        android:textSize="24sp"
+        android:textSize="16sp"
         android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toBottomOf="@+id/ivLogoPrincipal2" />
 
     <Button
         android:id="@+id/btnRegresar"
@@ -49,6 +52,84 @@
         android:background="?attr/actionModeCloseDrawable"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.045"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <CheckBox
+        android:id="@+id/CbScotiabank"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="40dp"
+        android:layout_marginLeft="40dp"
+        android:layout_marginTop="596dp"
+        android:text="@string/CbScotiabank"
+        android:textColor="@color/purple_700"
+        android:textStyle="bold"
+        app:layout_constraintStart_toEndOf="@+id/CbMastercard"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <CheckBox
+        android:id="@+id/CbAmericanExpress"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="28dp"
+        android:layout_marginLeft="28dp"
+        android:layout_marginTop="548dp"
+        android:text="@string/CbAmericanExpress"
+        android:textColor="@color/purple_700"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <CheckBox
+        android:id="@+id/CbPayPal"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="548dp"
+        android:layout_marginEnd="40dp"
+        android:layout_marginRight="40dp"
+        android:text="@string/CbPayPal"
+        android:textColor="@color/purple_700"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toStartOf="@+id/CbBCP"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <CheckBox
+        android:id="@+id/CbBCP"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="548dp"
+        android:layout_marginEnd="32dp"
+        android:layout_marginRight="32dp"
+        android:text="@string/CbBCP"
+        android:textColor="@color/purple_700"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <CheckBox
+        android:id="@+id/CbMastercard"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="44dp"
+        android:layout_marginLeft="44dp"
+        android:layout_marginTop="596dp"
+        android:text="@string/CbMastercard"
+        android:textColor="@color/purple_700"
+        android:textStyle="bold"
+        app:layout_constraintStart_toEndOf="@+id/CbVisa"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <CheckBox
+        android:id="@+id/CbVisa"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="28dp"
+        android:layout_marginLeft="28dp"
+        android:layout_marginTop="596dp"
+        android:text="@string/CbVisa"
+        android:textColor="@color/purple_700"
+        android:textStyle="bold"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 </androidx.constraintlayout.widget.ConstraintLayout>
