@@ -17,4 +17,6 @@
     <string name="CbAmericanExpress">American Express</string>
     <string name="CbBCP">BCP</string>
     <string name="CbScotiabank">Scotiabank</string>
+    <string name="valloccine">Actuales Locales de Cine</string>
+    <string name="ValListComic">Listado de Snacks</string>
 </resources>
